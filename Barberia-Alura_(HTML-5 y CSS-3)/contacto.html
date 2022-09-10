@@ -1,0 +1,158 @@
+<!---Aquí le digo al navegador que este HTML es  la version #5-->
+<!DOCTYPE html>
+<!---->
+
+<!--Aquí creo mi etiqueta <html> y le digo al navegador el idioma en el que esta hecha mi pagina con "lang="es"-->
+<html lang="es">
+<!---->    
+
+    <!--Aquí inicia mi <head>, aquí colocamos la relación y referencia a los archivos CSS, tambien el diccionario a utilizar por la pagina, el titulo de la pestaña, la compatibilidad con Internet Explorer y dispositivos moviles-->
+    <head>
+
+        <!--Aquí le digo al navegador el diccionario de caracteres universal que se va a utilizar-->
+        <meta charset="UTF-8">
+        <!---->
+
+        <!--Acá coloco el titulo de la pestaña de la pagina-->
+        <title>Contacto - Barbería Alura</title>
+        <!---->
+
+        <!--Permite a los autores de la web elegir la versión de Internet Explorer con la que se debe mostrar la página (se usa para dar compatibilidad a la paguina con los navegadores Internet Explorer)-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!---->
+
+        <!--Esto sirve para optimizar los sitios para móviles, esta etiqueta ayuda a definir el ancho, alto y escala del área usada por el navegador para mostrar contenido adecuadamente-->
+        <meta name="viewport" content="width=device-width">
+        <!---->
+
+        <!--Sirve para relacionar el html a un documento css especifico que se encarga de resetear los estilos pre-establecidos en HTML-5, para que no influya en los estilos que yo le aplico a la pagina-->
+        <link rel="stylesheet" href="reset.css">
+        <!---->
+
+        <!--Sirve para enlazar el HTML al archivo CSS donde especificare los estilos de la pagina-->
+        <link rel="stylesheet" href="style.css">
+        <!---->
+
+    </head>
+    <!--Fin head-->
+
+    <body>
+        <!--Aquí coloco mi loco para el encabezado-->
+        <header>
+            <div class="caja">
+                <!--Aquí coloco el logo o imagenes que usaré en el encabezado-->
+                <h1><img src="imagenes/logo.png" alt="Logo de la Barbeía Alura"></h1>
+                <!--Fin de logo-encabezado-->   
+                
+                <!--Aquí inicia mi panel de navegación-->
+                <nav>
+                    <!--La etiqueta <ul> sirve para crear una lista sin orden.-->
+                    <ul>
+                        <!--Aquí coloco cada elemento de navegación y su link dentro de cada uno (el link de a que pagína se debe dirigír). La etiqueta <a> sirve para especificar que el elemento es un enlace (link) a una pagína, etc.-->
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <!---->
+                    </ul>
+                    <!--Fin lista-->
+                </nav>
+                <!--Fin panel de navegación-->
+            </div>
+        </header>
+        <!--Fin encabezado-->
+
+        <!--Aquí comienza mi <main> o cuerpo de la pagina-->
+        <main>
+            <!--Aquí inicia mi formulario de contacto. La etiqueta <form> le informa al navegador que esta sección se  trata de un formulario-->
+            <form>
+                <!--La etiqueta <label> se trata de un texto y debemos enlazarla con un "for" a su correspondiente input.-->
+                <label for="nombreapellido">Nombre y Apellido:</label>
+                <!--La etiqueta <input> es un cuadro donde el usuario puede ingresar datos. La etiqueta necesita que le digamos que de qué tipo de (type) es, si es de "text", "email", "tel", "password", "date", "time", "datetime", etc. La caracteristica "required" especifica que ese <input> es obligatorio de rellenar.-->
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="correoelectronico">Correo Electrónico:</label>
+                <input type="email" id="correoelectronico"class="input-padron" required placeholder="email@dominio.com">
+                <!--La caracteristica "placeholder" muestra que dato va en cada <input>.-->
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono"class="input-padron" required placeholder="(XX) XXXX XXXX">
+                <!---->
+                <!--La etiqueta <textarea> indica que se trata de un aréa de texto. En está debemos indicar con "cols" la cantidad de columnas que tendra y con "rows" la cantidad de filas-->
+                <label for="mensaje">Mensaje:</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+                
+
+                <!--La etiqueta <fieldset> agrupa todos los elementos que pertenecen a un mismo grupo, en este caso estos elementos pertenecen al grupo "contacto" y de esa forma el usuario solo podra seleccionar una opción.-->
+                <fieldset>
+                    <!--La etiqueta <legend> se usa para el titulo general de los <input type="radio">.-->
+                    <legend class="test" id="test">¿Cómo le gustaría que lo contactemos?</legend>
+                    <!--El <input type="radio"> sirve para crear un circulo de selección. El "value" sirve para definir el valor enviado por el <input type="radio">.-->
+                    <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">Email</label>
+                    
+                    <label for="radio-telefono"><input type="radio" name="contacto" value="telefono" id="radio-telefono">Teléfono</label>
+                    <!--El "checked" sirve para que una opción este selecciona de forma predetermina.-->
+                    <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp" id="radio-whatsapp" checked>WhatsApp</label>
+                    
+                </fieldset>
+                <!--Fin del </fieldset>-->
+                <fieldset>
+                    <!--El legend es para el titulo general de nuestra lista de opciones desplegables.-->
+                    <legend>¿En cuál horario prefiere ser atendido?</legend>
+                    <!--El <select> se usa para crear una lista de opciones deplegables.-->
+                    <select class="options">
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                        <option>Noche</option>
+                    </select>
+                </fieldset>  
+
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura a su email?</label>
+                
+                <input type="submit" value="Enviar Formulario" class="enviar">
+            </form>
+            <!--Fin del Formulario-->
+            <!--Inicia mi tabla-->
+            <table> 
+                <!--El <thead> es el encabezado de la tabla-->
+                <thead>
+                    <tr>
+                        <!--El <th> sirve para especificar las celdas o columnas que pertenecen a ese encabezado-->
+                        <th>Día</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <!--Fin encabezado de tabla-->
+
+                <!--<tbody> es el cuerpo de la tabla-->
+                <tbody>
+                    <!--El elemento <tr> representa la linea de una tabla ( table ). El elemento <td> representa las celdas o columnas de cada linea-->
+                    <tr>
+                        <td>Lunes</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+
+                    <tr>
+                        <td>Miercoles</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+
+                    <tr>
+                        <td>Viernes</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+                </tbody>
+                <!--Fin cuerpo de tabla-->
+            </table>
+            <!--Fin de tabla-->
+
+        </main>
+        <!--Fin del main-->
+
+        <!--El <footer> se usa para crear el pie de pagina-->
+        <footer class="pie-pagina">
+            <img src="imagenes/logo-blanco.png" alt="Logo de la Barbeía Alura">
+            <p class="copyright">&copy Copyrigth Barbería Alura - 2022</p>
+        </footer>
+        <!--Fin </footer>-->
+
+    </body>
+</html>
